@@ -64,6 +64,17 @@ App = {
     App.todoList = await App.contracts.TodoList.deployed();
   },
 
+  createTask: async () => {
+    App.setLoading(true);
+
+    const content = $("#newTask").val();
+    console.log("content =>", content);
+    await App.todoList.createTask(content);
+
+    // App.setLoading(false);
+    window.location.reload();
+  },
+
   render: async () => {
     if (App.loading) {
       return;
