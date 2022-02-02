@@ -12,7 +12,7 @@ contract TodoList {
     mapping(uint256 => Task) public tasks;
 
     constructor() public {
-        createTask("Check out dappunivirsity.com");
+        createTask("Check out dappuniversity.com");
     }
 
     function createTask(string memory _content) public {
